@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>bar</title>
+		<script src="js/Chart.js"></script>
+    	<script src="js/excanvas.js"></script>
+	</head>
+	<style>
+		#bar{
+			width: 40%;
+			margin:auto;
+		}
+	</style>
+	<body>
+		<div id="bar">
+			<p>降雨等级</p>
+			<canvas id="canvas" height="450" width="600"></canvas>
+    		<br>
+    		<small>降雨等级/日期</small>
+    		<br>
+    		<small>注：降雨等级&nbsp;&nbsp;&nbsp;1-7&nbsp;&nbsp;&nbsp;为&nbsp;&nbsp;&nbsp;从弱到强</small>
+		</div>
+		<script>
+			window.onload = function() {
+				var ctx = document.getElementById("canvas").getContext("2d");
+	        };
+            var barChartData = {
+             	labels : ["5-1","5-2","5-3","5-4","5-5","5-6","5-7"],
+             	datasets : [{
+             		fillColor : "rgba(151,187,205,0.5)",
+					strokeColor : "rgba(151,187,205,0.8)",
+					highlightFill : "rgba(151,187,205,0.75)",
+					highlightStroke : "rgba(151,187,205,1)",
+					data : [2,3,0,4,0,7,0]
+				}]
+             }
+            window.onload = function(){
+            	var ctx = document.getElementById("canvas").getContext("2d");
+            	window.myBar = new Chart(ctx).Bar(barChartData, {
+            		responsive : true,
+        			scaleStepWidth : 10, //y轴每个刻度的宽度
+        			scaleLineColor : "rgba(0,0,0,.1)",// x轴y轴的颜色
+        			scaleLineWidth : 1,//轴线宽  
+        			scaleShowLabels : true,// 是否显示y轴的标签
+        			scaleShowGridLines : true,// 是否显示网格线
+        			scaleGridLineColor : "rgba(0,0,0,.05)",    // 网格线的颜色
+        			scaleGridLineWidth : 1, // 网格线的线宽
+        			barStrokeWidth : 2,   // 柱边线宽
+        			showTooltips: true, // 是否显示提示
+					});
+			}
+			</script>
+	</body>
+</html>
