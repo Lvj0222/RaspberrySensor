@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    	<title></title>
+    	<!--
+        <link rel="stylesheet" type="text/css" href="css/pc.css" media="screen">
+    	<link rel="stylesheet" type="text/css" href="css/phone.css" media="screen and (min-width:600px) and (max-width:979px)">
+       -->
+    	<script src="js/Chart.js"></script>
+    	<script src="js/excanvas.js"></script>
+    	<style type="text/css">
+    	    
+            #container{
+            	margin: auto;
+			}
+			
+			#item ul{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			#item li{
+				float: left;
+				color: white;
+			}
+			
+			#item li a:link,a:visited{
+				
+				width: 150px;
+				display: block;
+				color: black;
+				text-decoration: none;
+				text-align: center;
+				padding: 10px;
+			}
+
+			#item li a:hover{
+				background-color: #CCCCCC;
+			}
+			
+			iframe{
+				border: 0;
+			}
+			
+			#chart{
+				width: 60%;
+				margin: auto;
+			}
+			
+			header{
+				display: block;
+				clear: both;
+				margin: 0;
+			}
+
+			footer{
+				display: block;
+				color:#6699CC;
+    			clear:both;
+    			text-align:center;
+   				padding:6px;	 	 
+			}
+    	</style>
+	</head>
+
+	<body>
+		<div id="container">
+		<!--
+			<header>
+				<nav id="item">
+					<ul >
+						<li><a href="#home">首页</a></li>
+						<li><a href="#search">查询</a></li>
+					</ul>
+				</nav>
+			</header>
+        -->
+        	<br><br>
+        	
+			
+			<div id="chart">
+				<p >人流量：<b id="people">1111</b></p>
+				<script type="text/javascript">
+					var p=document.getElementById("people");   
+					p.innerHTML = "123456";
+				</script>
+				<iframe src="line.html" width="1000px" height="500px"></iframe>
+				<iframe src="bar.html" width="1000px" height="500px"></iframe>
+		    </div>
+		    
+    		<footer>
+				<p>Copyright</p>
+			</footer>
+		</div>
+	</body>
+</html>
+
+            	
