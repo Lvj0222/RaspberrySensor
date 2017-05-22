@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>人流量</title>
+		<script src="js/Chart.js"></script>
+    	<script src="js/excanvas.js"></script>
+	</head>
+	<style>
+		#p{
+			width: 45%;
+            margin: auto;
+		}
+	</style>
+	<body>
+		<div id="p">
+			<p >当前人流量：<b id="people">1111</b></p>
+			<script type="text/javascript">
+				var p=document.getElementById("people");
+				p.innerHTML = "123456";
+			</script>
+			<canvas id="canvas" height="450" width="600"></canvas>
+			<small>人流量/时间</small>
+			<br>
+		</div>
+		<script>   
+   			window.onload = function () {
+   				var ctx = document.getElementById("canvas").getContext("2d");
+   			};
+   			var lineChartData = {//17个数据
+   				labels: ["6:00","7:00", "8:00", "9:00", "10:00", "11:00", "12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00"],
+          	  	datasets: [{
+          	  		lable:"Humidity", //线条名称
+                	fillColor: "rgba(220,220,220,0.2)",//阴影部分颜色
+               		strokeColor: "rgba(151,187,205,1)", //线条颜色
+                	pointColor: "rgba(151,187,205,1)", //点颜色
+                	pointStrokeColor: "#FFFFFF", //点的包围圈颜色
+                	pointHighlightFill: "#339933",
+                	pointHighlightStroke: "rgba(220,220,220,1)",
+                	data : [0,22,86,159,190,250,600,1200]
+            	}]
+        	} 
+        	window.onload = function(){
+        		var ctx = document.getElementById("canvas").getContext("2d");
+        		window.myLine = new Chart(ctx).Line(lineChartData, {
+        			responsive: true,
+           	    	// 折线的曲线过渡，0是直线，默认0.4是曲线
+                	//bezierCurveTension: 0,
+            		bezierCurveTension: 0.4,
+            		bezierCurve: true, // 是否曲线
+            		scaleShowGridLines : true,// 是否显示网格
+            		scaleGridLineColor : "#CCCCCC",   // 网格颜色
+            		scaleGridLineWidth : 1,      // 网格线宽
+                	// 点击的小提示
+            		tooltipTemplate: "时间<%if (label){%><%=label%> 人流量<%}%><%= value %>",
+            		scaleLineColor : "#6666CC",    //轴色
+            		scaleLineWidth : 1, //轴线宽
+            		scaleSteps: 6, //几个单位的高
+            		scaleStepWidth: 5, //y轴坐标单位
+            		scaleStartValue: 0 //起始单位
+				});
+			} 
+    		</script>
+	</body>
+</html>
